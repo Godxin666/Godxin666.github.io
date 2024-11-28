@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的家乡——宜昌</title>
+    <style> 
+    p {
+  text-indent: 2em; /* 首行缩进两个字符的宽度 */
+}
+.no-text-indent {
+  text-indent: 0;  /*用于取消缩进*/
+}
+      html,body {
+        height:100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x:hidden;
+      }
+      body{
+        background-image: url('../image/yichangback.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      /* 重置列表样式 */
+.nav-list {
+  display:flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333; /* 导航条背景颜色 */
+}
+
+/* 导航项样式 */
+.nav-item {/* 使导航项水平排列 */
+  float:left;
+  margin-left:100px;
+  margin-right:100px;
+}
+
+/* 链接样式 */
+.nav-item a {
+  flex-grow:1;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none; /* 去掉下划线 */
+}
+
+/* 链接悬停效果 */
+.nav-item a:hover {
+  background-color: #111; /* 鼠标悬停时的背景颜色 */
+}
+.nav-item a.active {
+            background-color:blue;
+            color: white;
+        }
+
+/* 响应式设计：当屏幕宽度小于600px时，导航项垂直排列 */
+@media screen and (max-width: 600px) {
+  .nav-item {
+    float: none;
+    width: 100%; /* 每个导航项占满整个宽度 */
+  }
+}
+.box{
+  width: 100%;
+  height:90vh;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+}
+.content{
+  width: 100%;
+  height: 90vh;
+  flex-shrink: 0;
+}
+/* 风景名胜部分的容器样式 */
+#spot {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: flex-start; /* 靠左对齐 */
+  padding: 0px; /* 根据需要调整内边距 */
+}
+.spot-image {
+  display: flex; /* 启用Flex布局 */
+  flex-direction: row; /* 水平排列 */
+  margin-bottom: 5px; /* 图片之间的间距 */
+}
+/* 风景名胜部分的图片样式 */
+#spot img {
+  border: 1px solid black; /* 边框样式 */
+  width: auto; /* 宽度自动 */
+  height: auto; /* 高度自动 */
+  min-width: 300px; /* 设置图片的最小宽度 */
+  max-height: 150px; /* 设置图片的最大高度 */
+  margin-right: 10px; /* 图片右侧的间距 */
+}
+#spot p {
+  color: rgba(229, 255, 0, 0.873);
+  font-size: 20px;
+  margin: 0; /* 移除默认的外边距 */
+}
+/* 返回按钮的容器样式 */
+.return-button-container {
+      position: fixed; /* 固定定位 */
+      bottom: 10px; /* 距离底部10px */
+      right: 10px; /* 距离右侧10px */
+    }
+    /* 返回按钮样式 */
+    .rounded-button {
+      padding: 10px 20px; /* 按钮内边距 */
+      border: none; /* 无边框 */
+      border-radius: 5px; /* 圆角边框 */
+      color: black;
+      background-color: green;
+      cursor: pointer; /* 鼠标悬停时显示指针 */
+    }
+    </style>
+    <script>
+      // 当页面加载完成后执行
+      window.onload = function() {
+        // 获取所有的导航链接
+        var navLinks = document.querySelectorAll('.nav-item a');
+        
+        // 为每个导航链接添加点击事件
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            // 移除所有链接的active类
+            navLinks.forEach(function(navLink) {
+              navLink.classList.remove('active');
+            });
+            // 为被点击的链接添加active类
+            this.classList.add('active');
+          });
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#history"data-target="history"class="active"><strong style="color:crimson">历史沿革</strong></a></li>
+        <li class="nav-item"><a href="#geography"data-target="geography"><strong style="color:crimson">地理环境</strong></a></li>
+        <li class="nav-item"><a href="#spot"data-target="spot"><strong style="color:crimson">风景名胜</strong></a></li>
+        <li class="nav-item"><a href="#honor"data-target="honor"><strong style="color:crimson">荣誉称号</strong></a></li>
+      </ul>
+    </nav>
+    <section>
+        <div class="box">
+          <div id="history" class="content">
+            <div style="
+              max-width: 1500px;
+              margin: 10px auto;
+              padding: 10px;
+              line-height: 1.7;">
+              <p style="font-size:24px;color:rgba(229, 255, 0, 0.873);">
+              <img src="../image/yichang2.webp"alt="湖北当阳关陵"width="800px"height="500px"
+              style="float:left;border:1px solid black"hspace="10px"vspace="10px">
+              宜昌古称“夷陵”，因“水至此而夷、山至此而陵”得名。清朝时改称“宜昌”，取“宜于昌盛”之意。
+              三国时，吴黄武元年（222年），改夷陵为西陵郡，也称宜都郡。晋太康年间（280—289年），
+              改置为夷陵县。东晋分夷陵西境（在长江南岸的黄牛岩至黑岩之间）另置一县时命名“宜昌”，
+              寓意在于祈福分境置县宜于国运昌盛，“宜昌”之名便始见于史。(左图为湖北当阳关陵)
+              </p>
+              </div>
+          </div>
+          <div id="geography" class="content">
+            <div style="
+              max-width: 1500px;
+              margin: 10px auto;
+              padding: 10px;
+              line-height: 1.7;">
+              <p style="font-size:20px;color:rgba(229, 255, 0, 0.873);">
+              <img src="../image/yichang3.jpg"alt="湖北省地图"width="400px"height="250px"
+              style="float:left;border:1px solid black"hspace="10px"vspace="10px">
+              地理位置上，宜昌市位于湖北省西南部，地处长江上游与中游的结合部、鄂西武陵山脉和秦巴山脉向
+              江汉平原的过渡地带，是长江上游和中游的分界线，“上控巴蜀，下引荆襄”。东邻荆州市和荆门市，南抵湖南省石门
+              县，西接恩施土家族苗族自治州，北靠神农架林区和襄阳市，总面积2.1万平方千米。
+              <p style="font-size:20px;color:rgba(229, 255, 0, 0.873);">地形上，
+              宜昌市地形复杂，高低相差悬殊，海拔从2427米（兴山县仙女山）至35米（枝江市杨林湖）
+              ，垂直高差达2392米，呈现出自西向东逐级下降的态势，形成山地（高山、半高山、低山）
+              、丘陵和平原等三大基该地貌类型。</p>
+              <p style="font-size:20px;color:rgba(229, 255, 0, 0.873);">
+              气候上，宜昌市位于中亚热带与北亚热带的过渡地带，属亚热带季风性湿润气候。
+              有四季分明，水热同季，寒旱同季的气候特征。多年平均降水量1215.6毫米。平均气温16.9摄氏度，极端最高温度41.4摄氏度（7月）
+              ，极端最低温度零下9.8摄氏度（元月）。</p>
+              <p style="font-size:20px;color:rgba(229, 255, 0, 0.873);">水文上，宜昌市河流均属长江流域。以长江干流为主脉，
+              河流多、密度大、水量丰富。宜昌境内流域面积30平方千米以上的河流183条，总长5070千米。
+              流域面积3000平方千米以上的河流4条（长江、清江、沮漳河、香溪河），境内总长668千米。</p>
+              </p>
+              </div>
+          </div>
+          <div id="spot" class="content">
+            <div class="spot-image">
+            <img src="../image/yichang4.jpg"alt="三峡大坝"
+            style="float:left;border:1px solid black"hspace="10px"vspace="10px">
+            <p style="font-size:24px;">
+              三峡大坝，位于湖北省宜昌市夷陵区三斗坪镇三峡坝区三峡大坝旅游区内，地处长江干
+              流西陵峡河段，三峡水库东端。始建于1994年，集防洪、发电、航运、水资源利用等为
+              一体，是三峡水电站的主体工程、三峡大坝旅游区的核心景观、当今世界上最大的水利枢纽建筑之一。
+              三峡大坝主要由挡水泄洪主坝体、发电建筑物、通航建筑物等建筑组成，坝体为混凝土重力坝。
+              三峡工程发电效益可观，有助于缓解中国能源瓶颈，在构筑能源动脉，优化能源资源配置方面发挥重要作用。
+            </p>
+            </div>
+            <div class="spot-image">
+            <img src="../image/yichang5.jpg"alt="三峡人家"
+            style="float:left;border:1px solid black"hspace="10px"vspace="10px">
+            <p style="font-size:24px;">
+              宜昌市三峡人家风景区，位于湖北省宜昌市长江三峡中的西陵峡境内，三峡大坝和葛洲坝之间，
+              跨越灯影峡两岸，面积276平方千米。宜昌市三峡人家风景区“湾急、石奇、谷幽、洞绝、泉甘”，
+              它包括龙进溪、天下第四泉、野坡岭、灯影洞、抗战纪念馆、石牌古镇、杨家溪漂流等景区。 
+              2011年，宜昌市
+              三峡人家风景区被中华人民共和国文化和旅游部评为5A级旅游景区。
+            </p>
+            </div>
+            <div class="spot-image">
+            <img src="../image/yichang6.jpg"alt="百里荒"
+            style="float:left;border:1px solid black"hspace="10px"vspace="10px">
+            <p style="font-size:24px">
+              百里荒草原风景区，
+              国家AAAA级旅游景区，位于湖北省宜昌市夷陵区分乡镇，总面积40平方千米，
+              百里荒在古代因方圆百里荒无人烟而得名。百里荒的历史追踪溯源，最早是由宋代
+              文宗、时任夷陵县令欧阳修确定的夷陵九个自然景观之一。
+              百里荒野生动植物品种丰富，享有“中国南方草场”之美
+              誉。2003年7月，成立宜昌百里荒生态农业旅游开发有限公司，百里荒开发为旅游区。
+            </p>
+            </div>
+
+          </div>
+          <div id="honor" class="content">
+            <div style="
+              max-width: 1500px;
+              margin: 10px auto;
+              padding: 10px;
+              line-height: 1.7;">
+              <img src="../image/yichang1.png"alt="荣誉称号之一"width="800px"height="500px"
+              style="float:left;border:1px solid black"hspace="10px"vspace="10px">
+              <p style="color:red"class="no-text-indent">
+              <a target="_blank" rel="noopener noreferrer"
+              href="https://www.chinanews.com/df/2011/12-20/3546495.shtml">
+                <strong>《宜昌成湖北首个全国文明城市 15年努力终圆梦》(2015)</strong></a></p>
+                <p style="color:red"class="no-text-indent">
+                  <a target="_blank" rel="noopener noreferrer"
+                  href="http://fgw.yichang.gov.cn/content-62340-983249-1.html">
+                    <strong>《人民城市人民建，人民城市为人民——宜昌，迈向中国人居环境示范城市》(2023)</strong></a></p>
+              <p style="font-size:24px;color:rgba(229, 255, 0, 0.873);">
+                宜昌曾获得过许多荣誉称号，例如“2023年中国人居环境奖”“国家环境保护模范城市”“国家卫生城市”等等，
+                这些称号共同反映出宜昌这座城市对环境保护的重视。近年来<strong>“全国文明城市”</strong>的评选，宜昌更是“大显身手”。
+                上述两篇新闻生动展示了宜昌在成为全国文明城市这件事上所做的长期持久的努力，宜昌真正成为了一座“宜居之城”。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+     <!-- 返回按钮的容器 -->
+      <div class="return-button-container">
+      <!-- 返回按钮 -->
+        <a target="_blank" rel="noopener noreferrer" href="../index.html">
+          <button class="rounded-button" type="button">返回</button>
+        </a>
+      </div>
+  </body>
+</html>
